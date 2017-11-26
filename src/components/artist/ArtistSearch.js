@@ -56,7 +56,10 @@ class ArtistSearch extends Component {
           </Button>
         </Grid>
         {this.props.artistSelected && (
-          <ArtistDetails artist={this.props.artistSelected} />
+          <ArtistDetails
+            artist={this.props.artistSelected}
+            events={this.props.eventsList}
+          />
         )}
       </Grid>
     );
@@ -67,7 +70,8 @@ ArtistSearch = withStyles(styles)(ArtistSearch);
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    artistSelected: state.artists.artistSelected
+    artistSelected: state.artists.artistSelected,
+    eventsList: state.artists.eventsList
   };
 };
 
