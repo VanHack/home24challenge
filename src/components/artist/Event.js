@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Card, { CardHeader, CardContent, CardActions } from "material-ui/Card";
 import classnames from "classnames";
 import Collapse from "material-ui/transitions/Collapse";
-import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
 import Tooltip from "material-ui/Tooltip";
