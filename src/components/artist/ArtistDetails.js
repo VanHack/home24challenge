@@ -4,7 +4,7 @@ import Avatar from "material-ui/Avatar";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
 
-import ArtistEvent from "./ArtistEvent";
+import ArtistEvents from "./ArtistEvents";
 
 const styles = {
   row: {
@@ -13,8 +13,8 @@ const styles = {
   },
   avatar: {
     margin: 10,
-    width: 120,
-    height: 120
+    width: 220,
+    height: 180
   }
 };
 
@@ -26,14 +26,14 @@ function ArtistDetails(props) {
         "Artist not found"
       ) : (
         <Grid container spacing={16} alignItems="center">
-          <Grid item xs={12} sm={2}>
+          <Grid item xs={12} sm={3}>
             <Avatar
               alt={artist.name}
               src={artist.thumb_url}
               className={classes.avatar}
             />
           </Grid>
-          <Grid item xs={12} sm={10}>
+          <Grid item xs={12} sm={9}>
             <Grid container spacing={16}>
               <Grid item xs={12} sm={1}>
                 <Typography type="body2" gutterBottom>
@@ -70,7 +70,7 @@ function ArtistDetails(props) {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <ArtistEvent />
+            <ArtistEvents />
           </Grid>
         </Grid>
       )}

@@ -6,7 +6,6 @@ import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
 
 import ArtistSearch from "./artist/ArtistSearch";
-import ArtistEvent from "./artist/ArtistEvent";
 
 const styles = theme => ({
   root: {
@@ -32,7 +31,6 @@ class App extends Component {
             </Toolbar>
           </AppBar>
           <Route exact path="/" component={ArtistSearch} />
-          <Route exact path="/events" component={ArtistEvent} />
         </div>
       </Router>
     );
