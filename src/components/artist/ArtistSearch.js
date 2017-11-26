@@ -6,7 +6,7 @@ import Grid from "material-ui/Grid";
 import { withStyles } from "material-ui/styles";
 
 import ArtistDetails from "./ArtistDetails";
-import { loadArtist } from "../../actions/artistActions";
+import { loadArtist, loadEvents } from "../../actions/artistActions";
 
 const styles = theme => ({
   textField: {
@@ -28,7 +28,11 @@ class ArtistSearch extends Component {
 
   clickSearch = () => {
     const artistName = this.state.artistName;
-    this.props.loadArtist(artistName);
+    this.props.loadArtist(artistName).then(({ type, payload }) => {
+      if (type === "LOAD_ARTIST_SUCCESS") {
+        this.props.loadEvents(artistName);
+      }
+    });
   };
 
   render() {
@@ -67,6 +71,8 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-ArtistSearch = connect(mapStateToProps, { loadArtist })(ArtistSearch);
+ArtistSearch = connect(mapStateToProps, { loadArtist, loadEvents })(
+  ArtistSearch
+);
 
 export default ArtistSearch;

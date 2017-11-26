@@ -1,7 +1,10 @@
 import React from "react";
 import Grid from "material-ui/Grid";
 import Avatar from "material-ui/Avatar";
+import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
+
+import ArtistEvent from "./ArtistEvent";
 
 const styles = {
   row: {
@@ -31,7 +34,43 @@ function ArtistDetails(props) {
             />
           </Grid>
           <Grid item xs={12} sm={10}>
-            {artist.name}
+            <Grid container spacing={16}>
+              <Grid item xs={12} sm={1}>
+                <Typography type="body2" gutterBottom>
+                  Artist
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={11}>
+                <Typography gutterBottom>{artist.name}</Typography>
+              </Grid>
+              <Grid item xs={12} sm={1}>
+                <Typography type="body2" gutterBottom>
+                  Web Page
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={11}>
+                <Typography gutterBottom>
+                  <a href={artist.url} target="_blank">
+                    {artist.url}
+                  </a>
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={1}>
+                <Typography type="body2" gutterBottom>
+                  Facebook
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={11}>
+                <Typography gutterBottom>
+                  <a href={artist.facebook_page_url} target="_blank">
+                    {artist.facebook_page_url}
+                  </a>
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <ArtistEvent />
           </Grid>
         </Grid>
       )}
